@@ -1,0 +1,10 @@
+artifacts_root: artifacts
+
+
+europarl_data_ingestion:
+  root_dir: artifacts/data/europarl/raw
+  source_URL: https://www.statmt.org/europarl/v10/training/
+  unzip_dir: artifacts/data/europarl/processed
+  dataset_names:
+    - europarl-v10.bg-en.tsv.gz
+    - europarl-v10.cs-en.tsv.gz
