@@ -10,6 +10,17 @@ europarl_data_ingestion:
     - europarl-v10.cs-en.tsv.gz
     - europarl-v10.fr-en.tsv.gz
 
+WMTChat_data_ingestion:
+  root_dir: artifacts/data/wmt/raw
+  source_URL: https://raw.githubusercontent.com/WMT-Chat-task/chat-task-2024-data/main/
+  unzip_dir: artifacts/data/wmt/processed
+  dataset_names:
+    - train/en-de.csv
+    - train/en-fr.csv
+    - valid/en-de.csv
+    - valid/en-fr.csv
+
+
 data_validation:
   root_dir: artifacts/data_validation
   STATUS_FILE: artifacts/data_validation/status.txt #gives if the model has the desired files or not

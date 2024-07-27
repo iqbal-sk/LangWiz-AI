@@ -8,3 +8,10 @@ class EuroparlDataIngestionConfig:
     source_URL: str
     unzip_dir: Path
     dataset_names: list
+
+@dataclass(frozen=True)
+class WMTChatDataIngestionConfig:
+    root_dir: Path
+    source_URL: str
+    unzip_dir: Path
+    dataset_names: list

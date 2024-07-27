@@ -15,7 +15,9 @@ class DataIngestionPipeline:
     def main(self):
         config = ConfigurationManager()
         euro_data_ingestion_config = config.get_euro_data_ingestion_config()
-        data_ingestion = DataIngestion(config=euro_data_ingestion_config)
+        wmt_data_ingestion_config = config.get_wmt_chat_data_ingestion()
+        data_ingestion = DataIngestion(config=euro_data_ingestion_config,
+                                       wmt_config=wmt_data_ingestion_config)
         data_ingestion.download_and_process()
 
 
