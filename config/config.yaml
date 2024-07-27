@@ -8,3 +8,38 @@ europarl_data_ingestion:
   dataset_names:
     - europarl-v10.bg-en.tsv.gz
     - europarl-v10.cs-en.tsv.gz
+    - europarl-v10.fr-en.tsv.gz
+
+WMTChat_data_ingestion:
+  root_dir: artifacts/data/wmt/raw
+  source_URL: https://raw.githubusercontent.com/WMT-Chat-task/chat-task-2024-data/main/
+  unzip_dir: artifacts/data/wmt/processed
+  dataset_names:
+    - train/en-de.csv
+    - train/en-fr.csv
+    - valid/en-de.csv
+    - valid/en-fr.csv
+
+
+data_validation:
+  root_dir: artifacts/data_validation
+  STATUS_FILE: artifacts/data_validation/status.txt #gives if the model has the desired files or not
+  ALL_REQUIRED_FILES: ['train', 'test','validation']
+
+data_transformation:
+  root_dir: artifacts/data_transformation
+  data_path: artifacts/data/europarl/processed/fr_en
+  result_dataset_path: artifacts/data_transformation/europarl/processed/fr_en
+  tokenizer_name: Helsinki-NLP/opus-mt-fr-en
+
+prepare_base_model:
+  root_dir: artifacts/prepare_base_model
+  data_path: artifacts/data_transformation/europarl/processed/fr_en
+  model_ckpt: Helsinki-NLP/opus-mt-fr-en
+
+model_evaluation:
+  root_dir: artifacts/model_evaluation
+  data_path: artifacts/data_transformation/europaarl/processed/fr_en
+  model_path: artifacts/prepare_base_model/fr_en_model
+  tokenizer_path: artifacts/prepare_base_model/fr_en_tokenizer
+  metric_file_name: artifacts/model_evaluation/metrics.csv

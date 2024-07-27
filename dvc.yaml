@@ -6,3 +6,4 @@ stages:
       - config/config.yaml
     outs:
       - artifacts/data/europarl/processed
+      - artifacts/data/wmt/processed
