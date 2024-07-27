@@ -17,7 +17,8 @@ data_validation:
 
 data_transformation:
   root_dir: artifacts/data_transformation
-  data_path: artifacts/data/europarl/processed/fr-en
+  data_path: artifacts/data/europarl/processed/fr_en
+  result_dataset_path: artifacts/data_transformation/europarl/processed/fr_en
   tokenizer_name: Helsinki-NLP/opus-mt-fr-en
 
 prepare_base_model:
@@ -27,7 +28,7 @@ prepare_base_model:
 
 model_evaluation:
   root_dir: artifacts/model_evaluation
-  data_path: artifacts/data_transformation/europaarl/processed/fr-en
+  data_path: artifacts/data_transformation/europaarl/processed/fr_en
   model_path: artifacts/prepare_base_model/fr_en_model
   tokenizer_path: artifacts/prepare_base_model/fr_en_tokenizer
   metric_file_name: artifacts/model_evaluation/metrics.csv

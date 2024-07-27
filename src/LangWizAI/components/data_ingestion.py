@@ -49,12 +49,19 @@ class DataIngestion:
         source_lang, target_lang = base_name.split('-')[1].split('.')[1], base_name.split('-')[2].split('.')[0]
 
         # Create directories for source and target languages
-        source_dir = os.path.join(self.config.unzip_dir, f"{source_lang}-{target_lang}")
+        source_dir = os.path.join(self.config.unzip_dir, f"{source_lang}_{target_lang}")
         os.makedirs(source_dir, exist_ok=True)
 
         # Save processed TSV
-        processed_tsv_path = os.path.join(source_dir, f"{source_lang}-{target_lang}.tsv")
-        df[['source_text', 'target_text']].to_csv(processed_tsv_path, sep='\t', index=False)
+        processed_tsv_path = os.path.join(source_dir, f"{source_lang}_{target_lang}.csv")
+
+        columns = ['source_text', 'target_text']
+
+        for column in columns:
+            df = df[df[column].notna()]  # Remove rows with missing values
+            df = df[df[column].str.strip() != '']
+
+        df[['source_text', 'target_text']].to_csv(processed_tsv_path, sep=',', index=False)
         logger.info(f"Saved processed TSV to {processed_tsv_path}")
 
 
