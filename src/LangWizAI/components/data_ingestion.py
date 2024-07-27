@@ -90,6 +90,13 @@ class DataIngestion:
             df = pd.read_csv(csv_path)
             df = df[['source', 'reference']]
             df.rename(columns={'source': 'source_text', 'reference': 'target_text'}, inplace=True)
+
+            columns = ['source_text', 'target_text']
+
+            for column in columns:
+                df = df[df[column].notna()]  # Remove rows with missing values
+                df = df[df[column].str.strip() != '']
+
         except Exception as e:
             logger.error(f"Error processing {csv_path}: {e}")
             return
@@ -115,7 +122,7 @@ class DataIngestion:
             self.download_and_extract_wmt_chat(dataset)
 
     def download_and_process(self):
-        self.download_and_process_europarl()
+        # self.download_and_process_europarl()
         self.download_and_process_wmt_chat()
 
 
