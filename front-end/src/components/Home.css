@@ -1,0 +1,108 @@
+.home-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  color: #fff;
+  background-color: #1e1e1e;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  text-align: center;
+}
+
+.header {
+  margin-bottom: 20px;
+}
+
+.header h1 {
+  font-size: 2.5em;
+  margin: 0;
+}
+
+.header p {
+  font-size: 1.2em;
+  margin: 5px 0 0;
+}
+
+.translation-box {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+textarea {
+  width: 100%;
+  height: 100px;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 1em;
+}
+
+.language-selection {
+  display: flex;
+  gap: 10px;
+}
+
+.language-selection select {
+  padding: 5px;
+  border-radius: 5px;
+  font-size: 1em;
+}
+
+button {
+  padding: 10px 20px;
+  margin: 5px;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  font-size: 1em;
+}
+
+.result-box {
+  margin-top: 20px;
+  padding: 20px;
+  background-color: #2e2e2e;
+  border-radius: 10px;
+  text-align: left;
+}
+
+.translated-text {
+  font-size: 1.0em;
+  color: whitesmoke;
+  background-color: #000;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.actions {
+  display: flex;
+  gap: 10px;
+}
+
+.actions button {
+  background-color: #28a745;
+  font-size: 0.9em;
+}
+
+.feedback {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.feedback span {
+  margin: 0 10px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.thank-you {
+  margin-top: 20px;
+  background-color: #2e2e2e;
+  padding: 10px;
+  border-radius: 10px;
+  text-align: center;
+}
